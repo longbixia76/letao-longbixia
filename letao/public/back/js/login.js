@@ -78,7 +78,8 @@ $(function(){
                 console.log(info);
 
                 if (info.success){
-                    alert("登录成功")
+                    //alert("登录成功")
+                    location.href = "index.html"
                 }
                 if(info.error == 1000){
                     //alert("用户名不存在")
