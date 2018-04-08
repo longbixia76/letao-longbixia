@@ -145,8 +145,21 @@ a:active{
 .breadcrumb {
     margin-top: 20px;
 }
-/*右边主体结束*/
+
+/*echarts 图表绘制*/
+.echarts_1,
+
+.echarts_2 {
+    width: 49%;
+    height: 400px;
+    background-color:coral;
+    
+}
+
+
 /*模态框*/
 .modal-body .red {
     color:#A94442;
 }
+
+/*右边主体结束*/

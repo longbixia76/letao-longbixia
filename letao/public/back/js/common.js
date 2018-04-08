@@ -23,6 +23,30 @@ $(document).ajaxStop(function () {
 
 })
 
+$(function(){
+    //在一进入页面就开始获取页面状态，通过ajax请求,不需要获取数据，只需要判断
+
+    //先判断当前页面是否是login页面，是的话不需要进行登录拦截，不是才需要
+    if(location.href.indexOf("login.html") == -1 ){
+        $.ajax({
+            type:"get",
+            url:"/employee/checkRootLogin",
+            success: function(info){
+                console.log(info);
+                if(info.success){
+                    console.log("登录成功")
+                }
+                if(info.error === 400){
+                    location.href = "login.html"
+                }
+            }
+
+        })
+    }
+})
+
+
+
 
 //二级分类功能,点击分类管理，让下面的分类显示，再点击隐藏
 $(function(){
