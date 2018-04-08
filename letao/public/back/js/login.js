@@ -78,9 +78,7 @@ $(function(){
                 console.log(info);
 
                 if (info.success){
-                    //alert("登录成功")
-                    location.href="index.html"
-
+                    alert("登录成功")
                 }
                 if(info.error == 1000){
                     //alert("用户名不存在")
@@ -101,11 +99,10 @@ $(function(){
         })
     });
 
+
    //3重置功能实现
     $('[type = "reset"]').click(function(){
-         //添加true是不仅重置表单的内容还会重置表单的状态
         $("form").data("bootstrapValidator").resetForm(true);
     })
-
 
 });
