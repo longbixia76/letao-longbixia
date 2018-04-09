@@ -128,6 +128,7 @@ a:active{
     right: 0;
     top:0;
     transition: all 1s;
+    z-index: 666;
 
 }
 
@@ -152,10 +153,16 @@ a:active{
 .echarts_2 {
     width: 49%;
     height: 400px;
-    background-color:coral;
+  
     
 }
 
+
+.table-bordered.table-hover th,
+.table-bordered.table-hover td {
+    text-align: center;
+    vertical-align: middle;
+}
 
 /*模态框*/
 .modal-body .red {
