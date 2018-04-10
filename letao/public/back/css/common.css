@@ -20,6 +20,9 @@ a:active{
     background: #222d32;
 }
 
+.mg_bt{
+    margin-bottom: 20px;
+}
 .mt_150 {
     margin-top: 150px;
 }
@@ -153,7 +156,7 @@ a:active{
 .echarts_2 {
     width: 49%;
     height: 400px;
-  
+
     
 }
 
