@@ -35,13 +35,12 @@ $(function () {
         })
     }
 
-
     //点击按钮，显示模态框
    $(".secondBtn").click(function () {
        $("#addModal").modal("show");
        //请求一级分类名称，渲染下拉列表
        $.ajax({
-           url:"/category/querySecondCategoryPaging",
+           url:'/category/queryTopCategoryPaging',
            type:"get",
            data:{
                page:1,
@@ -54,7 +53,6 @@ $(function () {
            }
        })
    })
-
     //通过注册委托事件，给a注册点击事件
     $(".dropdown-menu").on("click","a",function(){
         //拿到选中的文本
@@ -67,8 +65,11 @@ $(function () {
         $('[name = "categoryId"]').val(id);
 
         //需要将校验状态置成 VALID
+        // 需要将校验状态置成 VALID
+        // 参数1: 字段
+        // 参数2: 校验状态
+        // 参数3: 配置规则, 来配置我们的提示文本
         $('#form').data("bootstrapValidator").updateStatus("categoryId", "VALID");
-
 
     })
 
@@ -88,8 +89,8 @@ $(function () {
             //将图片地图传到隐藏域中
             $('[name ="brandLogo" ]').val(picAddr);
 
-            $('#form').data("bootstrapValidator").updateStatus("brandLogo", "VALID")
 
+            $('#form').data("bootstrapValidator").updateStatus("brandLogo", "VALID")
         }
     });
 
@@ -141,8 +142,8 @@ $(function () {
          }
 
      })
+    //注册校验成功实践，通过ajax进行添加
 
-    //注册校验成功事件，通过ajax进行请求
     $("#form").on("success.form.bv", function( e ) {
         // 阻止默认的提交
         e.preventDefault();
@@ -152,7 +153,7 @@ $(function () {
             type: "post",
             data: $('#form').serialize(),
             success: function( info ) {
-                //console.log( info )
+                console.log( info )
 
                 // 关闭模态框
                 $('#addModal').modal("hide");
@@ -167,7 +168,7 @@ $(function () {
                 $('#dropdownText').text("请选择1级分类")
 
                 // 找到图片重置
-                $('#imgBox img').attr("src", "images/none.png")
+                $('#imgBox img').attr("src", "images/33.jpg")
             }
         })
     })
