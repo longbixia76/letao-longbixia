@@ -99,8 +99,6 @@ $(function(){
 
         })
     });
-
-
    //3重置功能实现
     $('[type = "reset"]').click(function(){
         $("form").data("bootstrapValidator").resetForm(true);

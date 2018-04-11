@@ -52,7 +52,6 @@ $(function(){
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
         },
-
         //配置字段
         fields: {
             categoryName: {
@@ -70,7 +69,7 @@ $(function(){
         }
     })
 
-    - //给表单注册一个校验成功事件 success.form.bv
+     //给表单注册一个校验成功事件 success.form.bv
 
      $("#form").on("success.form.bv", function (e) {
         //
@@ -87,12 +86,10 @@ $(function(){
              },
 
          })
-
          render();
-
          $form.data("bootstrapValidator").resetForm(true);
     })
-    
+
 })
 
 
